@@ -8,7 +8,7 @@ Homebrew formulae for [@mahata](https://github.com/mahata)'s tools.
 brew install mahata/tap/copilotview
 ```
 
-Homebrew taps this repository automatically on first install. Upgrade with `brew upgrade`.
+Homebrew taps this repository automatically on first install. Use the full name: Homebrew loads formulae from unofficial taps only after you trust them, and naming the formula in full trusts it. Upgrade with `brew upgrade`.
 
 ## Formulae
 
