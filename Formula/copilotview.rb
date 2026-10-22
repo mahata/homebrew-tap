@@ -1,8 +1,8 @@
 class Copilotview < Formula
   desc "Browse, search and summarize past GitHub Copilot CLI sessions"
   homepage "https://github.com/mahata/copilotview"
-  url "https://github.com/mahata/copilotview/releases/download/v0.5.0/copilotview-0.5.0.tar.gz"
-  sha256 "eefd214a4f611d4021ace6b88e9fbca621bf995a082e03161bcf0745d5c5a1f0"
+  url "https://github.com/mahata/copilotview/releases/download/v0.6.0/copilotview-0.6.0.tar.gz"
+  sha256 "8aa1c28aa63d7489226bcf01d9d537a0b31a67a9c207bcc269190312dc29c8a0"
   license "MIT"
 
   depends_on "node"
@@ -13,6 +13,7 @@ class Copilotview < Formula
       #!/bin/bash
       exec "#{formula_opt_bin("node")}/node" "#{libexec}/cli.js" "$@"
     SH
+    bin.install_symlink bin/"copilotview" => "cv"
   end
 
   test do
@@ -21,6 +22,7 @@ class Copilotview < Formula
     (testpath/"sessions").mkpath
     system bin/"copilotview", "index", "--source", testpath/"sessions", "--index", testpath/"index.db"
     assert_match "Sessions:   0", shell_output("#{bin}/copilotview stats --index #{testpath}/index.db")
+    assert_match "Sessions:   0", shell_output("#{bin}/cv stats --index #{testpath}/index.db")
 
     port = free_port
     pid = spawn bin/"copilotview", "serve", "--source", testpath/"sessions", "--index", testpath/"index.db",
