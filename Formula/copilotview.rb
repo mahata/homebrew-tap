@@ -1,8 +1,8 @@
 class Copilotview < Formula
   desc "Browse, search and summarize past GitHub Copilot CLI and app sessions"
   homepage "https://github.com/mahata/copilotview"
-  url "https://github.com/mahata/copilotview/releases/download/v0.13.0/copilotview-0.13.0.tar.gz"
-  sha256 "c2b80b01dc6a40f3e5903c10850cd364b381d0c94e5572660225426a4719dcee"
+  url "https://github.com/mahata/copilotview/releases/download/v0.14.0/copilotview-0.14.0.tar.gz"
+  sha256 "b25947a00856c402e89cca5860e1469a1399a2c53010eacba9af24970c76c16b"
   license "MIT"
 
   depends_on "node"
